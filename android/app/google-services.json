@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "28779360587",
+    "project_id": "newsviews-cb84c",
+    "storage_bucket": "newsviews-cb84c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28779360587:android:5caee3cde46555731a78ce",
+        "android_client_info": {
+          "package_name": "com.example.news_views"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuI8bSX77_Fl2B3iw1Vj0Ak3NbyTDK9Yk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
