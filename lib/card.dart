@@ -57,8 +57,14 @@ class _NewsCardState extends State<NewsCard> {
 
   Widget buildCard(Offset distance,double blur) => AnimatedContainer(  duration: const Duration(milliseconds: 200),
     height: 400,
+    padding: const EdgeInsets.all(10),
     decoration:BoxDecoration(
-      color: Colors.grey[300],
+      image: DecorationImage(
+
+        image: AssetImage( "assets/1.jpg"),
+        fit: BoxFit.fill,
+      ),
+
       borderRadius: BorderRadius.circular(15),
       border: Border.all(color: Colors.white, width: 2),
       boxShadow: [
@@ -70,7 +76,7 @@ class _NewsCardState extends State<NewsCard> {
           inset: isElevated,
         ),
         BoxShadow(
-          color: Colors.white,
+          color: Colors.black,
           offset: -distance,
           blurRadius: blur,
           spreadRadius: 1,

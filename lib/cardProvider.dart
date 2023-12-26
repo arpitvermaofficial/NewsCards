@@ -2,14 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-enum CardStatus { Interested, NotInterested}
+enum CardStatus { Interested, Not_Interested}
 
 class CardProvider extends ChangeNotifier {
 
   int index = 2;
   String right = "";
   String curr = "";
-
   List<String> _urlimage = [];
 
   Offset _position = Offset.zero;
@@ -31,6 +30,7 @@ class CardProvider extends ChangeNotifier {
         urlimage.add(curr);
         urlimage.add(right);
         urlimage.reversed.toList();
+        print(urlimage);
         notifyListeners();
       },
     );
@@ -84,7 +84,7 @@ class CardProvider extends ChangeNotifier {
       case CardStatus.Interested:
         like();
         break;
-      case CardStatus.NotInterested:
+      case CardStatus.Not_Interested:
         dislike();
         break;
       default:
@@ -100,7 +100,7 @@ class CardProvider extends ChangeNotifier {
     if (x >= delta) {
       return CardStatus.Interested;
     } else if (x <= -delta) {
-      return CardStatus.NotInterested;
+      return CardStatus.Not_Interested;
     }
   }
 

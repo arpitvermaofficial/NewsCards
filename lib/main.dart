@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
-import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter/material.dart' ;
 
 import 'package:news_views/card.dart';
 import 'package:news_views/user.dart';
@@ -30,16 +29,15 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        home:  MyHomePage(),
       ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key, });
 
-  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -49,14 +47,26 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
+        backgroundColor: Colors.transparent,
+
+          body:
+        SafeArea(
             child: Container(
-             color: Colors.grey[300],
+  height: MediaQuery.of(context).size.height,
+
+              decoration: BoxDecoration(
+
+                image: DecorationImage(
+
+                  image: AssetImage( "assets/11.jpg"),
+                  fit: BoxFit.fill,
+                ),
+                ),
+
 
               alignment: Alignment.center,
       padding: EdgeInsets.all(16),
-      child: buildCards(),
-    )));
+      child: Container(child: buildCards()))));
   }
 
   Widget buildCards() {
