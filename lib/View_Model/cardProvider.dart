@@ -2,10 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-enum CardStatus { Interested, Not_Interested}
+enum CardStatus { Interested, Not_Interested }
 
 class CardProvider extends ChangeNotifier {
-
   int index = 2;
   String right = "";
   String curr = "";
@@ -77,7 +76,11 @@ class CardProvider extends ChangeNotifier {
     final status = getsatus();
     if (status != null) {
       Fluttertoast.cancel();
-      Fluttertoast.showToast(msg: status.toString().split('.').last.toUpperCase(), fontSize: 16.0,textColor: status == CardStatus.Interested ? Colors.green : Colors.red);
+      Fluttertoast.showToast(
+          msg: status.toString().split('.').last.toUpperCase(),
+          fontSize: 16.0,
+          textColor:
+              status == CardStatus.Interested ? Colors.green : Colors.red);
     }
 
     switch (status) {
@@ -112,7 +115,6 @@ class CardProvider extends ChangeNotifier {
   }
 
   void like() {
-
     notifyListeners();
     _angle = 20;
     _position += Offset(2 * _screenSize.width / 2, 0);
